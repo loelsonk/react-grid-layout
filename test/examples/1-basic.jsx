@@ -7,7 +7,7 @@ const ReactGridLayout = WidthProvider(RGL);
 class BasicLayout extends React.PureComponent {
   static defaultProps = {
     className: "layout",
-    items: 20,
+    items: 4,
     rowHeight: 30,
     onLayoutChange: function() {},
     cols: 12
@@ -39,7 +39,8 @@ class BasicLayout extends React.PureComponent {
         y: Math.floor(i / 6) * y,
         w: 2,
         h: y,
-        i: i.toString()
+        i: i.toString(),
+        resizableAxis: 'x',
       };
     });
   }
@@ -53,6 +54,7 @@ class BasicLayout extends React.PureComponent {
       <ReactGridLayout
         layout={this.state.layout}
         onLayoutChange={this.onLayoutChange}
+        resizableAxis="x"
         {...this.props}
       >
         {this.generateDOM()}

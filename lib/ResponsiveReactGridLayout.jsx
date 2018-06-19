@@ -215,6 +215,7 @@ export default class ResponsiveReactGridLayout extends React.Component<
         layout,
         nextProps.children,
         newCols,
+        Infinity,
         compactType
       );
 
